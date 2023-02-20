@@ -22,6 +22,9 @@ namespace APIV2.Controllers
 
         // GET: api/Series
         [HttpGet]
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Serie))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<Serie>>> GetSeries()
         {
             return await _context.Series.ToListAsync();
