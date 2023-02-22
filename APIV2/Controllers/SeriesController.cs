@@ -15,6 +15,7 @@ namespace APIV2.Controllers
     {
         private readonly SeriesDbContext _context;
 
+
         public SeriesController(SeriesDbContext context)
         {
             _context = context;
@@ -22,7 +23,6 @@ namespace APIV2.Controllers
 
         // GET: api/Series
         [HttpGet]
-        [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Serie))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<Serie>>> GetSeries()
